@@ -2,14 +2,20 @@
 
 public class MatchID : MonoBehaviour
 {
-    public NameID nameIDObj;
+    public NameID nameIdObj;
+    public IDCollection IdCollectionList;
     
     private void OnTriggerEnter(Collider other)
     {
-        var nameIdObj = other.GetComponent<MatchID>().nameIDObj;
+        var nameIdObj = other.GetComponent<MatchID>().nameIdObj;
         if (nameIdObj == null) return;
         var otherNameId = nameIdObj;
-        if (nameIDObj == otherNameId)
+        foreach (var ID in IdCollectionList)
+        {
+            // do work
+        }
+
+        if (nameIdObj == otherNameId)
         {
             //do work
         }
