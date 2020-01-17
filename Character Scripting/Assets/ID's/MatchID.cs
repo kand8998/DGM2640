@@ -1,23 +1,21 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class MatchID : MonoBehaviour
 {
-    public NameID nameIdObj;
-    public IDCollection nameIdList;
+    public List<NameID> nameIDList;
     
     private void OnTriggerEnter(Collider other)
     {
-        var doWorkObj = other.GetComponent<DoWork>().nameIDObj;
-        var otherNameId = doWorkObj.nameIDObj;
-        
-        foreach (var nameID in nameIdList)
-        {
-            // do work
-        }
+        var doWorkObj = other.GetComponent<DoWork>();
+        var otherNameID = doWorkObj.nameIDObj;
 
-        if (nameIdObj == other.GetComponent<DoWork>().nameIDObj)
+        foreach (var nameId in nameIDList)
         {
-           
+            if (nameId == otherNameID)
+            {
+                doWorkObj.Work();
+            }
         }
     }
 }
