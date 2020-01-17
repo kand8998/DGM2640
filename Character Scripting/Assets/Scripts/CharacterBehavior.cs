@@ -7,7 +7,7 @@ public class CharacterBehavior : MonoBehaviour
     private Vector3 positionChange, controllerCenter, moveDirection = Vector3.zero;
     private CharacterController controller;
 
-    public float controllerHeight = 3f, controllerRadius = 2f, controllerOffset = 1f,
+    public float controllerHeight = 3f, controllerRadius = 3f, controllerOffset = 1f,
         speed = 6.0f, gravity = 20.0f;
 
     public GameAction heightAction, radiusAction, groundedAction,
