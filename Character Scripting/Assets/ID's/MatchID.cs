@@ -4,6 +4,7 @@ using UnityEngine;
 public class MatchID : MonoBehaviour
 {
     public List<NameID> nameIDList;
+    public FloatData data;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,7 @@ public class MatchID : MonoBehaviour
             {
                 doWorkObj.Work();
             }
+           
         }
     }
 }
