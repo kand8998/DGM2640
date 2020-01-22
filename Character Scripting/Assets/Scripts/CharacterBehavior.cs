@@ -4,7 +4,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(CharacterController))]
 public class CharacterBehavior : MonoBehaviour
 {
-    private Vector3 positionChange, controllerCenter, moveDirection = Vector3.zero;
+    private Vector3 positionChange;
+    private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
 
     public float controllerHeight = 3f, controllerRadius = 3f, controllerOffset = 1f,
@@ -22,7 +23,6 @@ public class CharacterBehavior : MonoBehaviour
         radiusAction.action += SetControllerRadius;
         groundedAction.action += GroundedController;
         offsetAction.action += ControllerStepOffset;
-        centerAction.action += ControllerCenterChange;
     }
 
     private void SetControllerHeight()
@@ -60,11 +60,6 @@ public class CharacterBehavior : MonoBehaviour
     private void ControllerHashCode()
     {
         var hashCode = controller.GetHashCode();
-    }
-
-    private void ControllerCenterChange()
-    {
-        controller.center = controllerCenter;
     }
 
     private void ControllerBool()
