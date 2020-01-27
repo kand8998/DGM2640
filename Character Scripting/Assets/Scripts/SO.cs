@@ -28,6 +28,7 @@ public class GameAction : ScriptableObject
 public class AnimController : ScriptableObject
 {
     public float animationSpeed = 10f, animatorPlayback = 3f;
+    
     public void AnimCall(Animator animator)
     {
         animator.SetTrigger(name);
