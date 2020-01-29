@@ -113,3 +113,9 @@ public class FloatData : ScriptableObject
         value = amount;
     }
 }
+
+[CreateAssetMenu]
+public class BoolData: ScriptableObject
+{
+    public bool check;
+}

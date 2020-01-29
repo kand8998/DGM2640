@@ -2,54 +2,32 @@
 
 public class AnimBool : MonoBehaviour
 {
-private Animator myAnimator;
-	private bool jumpBool;
-	private bool runBool;
-	public GameAction animAction;
+	private Animator animObj;
+	public BoolData boolObj;
+	public GameAction animTrueAction;
+	public GameAction animFalseAction;
 	
 	private void Start ()
 	{
-		myAnimator = GetComponent<Animator>();
-		jumpBool = false;
-		runBool = false;
-		animAction.action += JumpTrue;
+		animObj = GetComponent<Animator>();
+		boolObj.check = false;
+		animTrueAction.action += True;
+		animFalseAction.action += False;
 	}
 
-	private void JumpTrue()
+	private void True()
 	{
-		jumpBool = true;
-		if (jumpBool == true)
+		if (boolObj == true)
 		{
-			myAnimator.SetBool("jumpBool", true);
-		}
-	}
-
-	private void JumpFalse()
-	{
-		jumpBool = false;
-		if (jumpBool == false)
-		{
-			myAnimator.SetBool("jumpBool", false);
-		}
-	}
-
-	private void RunTrue()
-	{
-		runBool = true;
-		if (runBool == true)
-		{
-			myAnimator.SetBool("runBool", true);
-		}
-		
-	}
-
-	private void RunFalse()
-	{
-		runBool = false;
-		if (runBool == false)
-		{
-			myAnimator.SetBool("runBool", false);
+			animObj.SetBool("Bool", true);
 		}
 	}
 	
+	private void False()
+	{
+		if (boolObj == true)
+		{
+			animObj.SetBool("Bool", false);
+		}
+	}
 }
