@@ -115,6 +115,17 @@ public class FloatData : ScriptableObject
 }
 
 [CreateAssetMenu]
+public class IntData: ScriptableObject
+{
+    public int count = 0;
+
+    private void UpdateCount(int amount)
+    {
+        count += amount;
+    }
+}
+
+[CreateAssetMenu]
 public class BoolData: ScriptableObject
 {
     public bool check;
