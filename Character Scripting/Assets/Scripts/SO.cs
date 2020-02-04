@@ -71,7 +71,7 @@ public class Debugger : ScriptableObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Single Variables/FloatData")]
 public class FloatData : ScriptableObject
 {
     public float value = 1f;
@@ -114,7 +114,7 @@ public class FloatData : ScriptableObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Single Variables/IntData")]
 public class IntData: ScriptableObject
 {
     public int count = 0;
@@ -128,10 +128,16 @@ public class IntData: ScriptableObject
 [CreateAssetMenu(menuName = "Single Variables/BoolData")]
 public class BoolData: ScriptableObject
 {
-    public bool value, check;
+    public bool value;
+    public bool check;
 
     public void SetValue(bool valueChange)
     {
         value = valueChange;
+    }
+
+    public void SetCheck(bool checkChange)
+    {
+        check = checkChange;
     }
 }
