@@ -125,8 +125,13 @@ public class IntData: ScriptableObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Single Variables/BoolData")]
 public class BoolData: ScriptableObject
 {
-    public bool check;
+    public bool value, check;
+
+    public void SetValue(bool valueChange)
+    {
+        value = valueChange;
+    }
 }
