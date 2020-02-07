@@ -21,6 +21,16 @@ public class Movement : MonoBehaviour
         position.z = moveSpeed*Input.GetAxis("Vertical");
         position.y -= gravity;
 
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            moveSpeed++;
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            moveSpeed--;
+        }
+        
         if (controller.isGrounded)
         {
             position.y = 0;
@@ -32,7 +42,6 @@ public class Movement : MonoBehaviour
             position.y = jumpSpeed;
             jumpCount++;
         }
-        
         controller.Move(position*Time.deltaTime);
     }
 }
