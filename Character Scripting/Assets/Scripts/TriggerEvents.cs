@@ -5,20 +5,23 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class TriggerEvents : MonoBehaviour
 {
-    private void Awake()
-    {
-        GetComponent<Collider>().isTrigger = true;
-    }
-
-    public UnityEvent triggerEnterEvent, triggerExitEvent;
+    public UnityEvent triggerEnterEvent, triggerExitEvent, triggerStayEvent, crouchEvent;
     private void OnTriggerEnter(Collider other)
     {
         triggerEnterEvent.Invoke();
-        
     }
 
     private void OnTriggerExit(Collider other)
     {
         triggerExitEvent.Invoke();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        triggerStayEvent.Invoke();
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            crouchEvent.Invoke();
+        }
     }
 }

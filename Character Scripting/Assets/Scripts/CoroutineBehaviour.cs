@@ -5,8 +5,7 @@ using UnityEngine.Events;
 public class CoroutineBehaviour : MonoBehaviour
 {
     public UnityEvent onEnableEvent, coroutineEvent, endCountDownEvent;
-    public float startHoldTime = 0;
-    public float repeatHoldTime = 1;
+    public float startHoldTime = 0, repeatHoldTime = 1;
     public int countDownNum;
     private bool CanRun { get; set; }
 

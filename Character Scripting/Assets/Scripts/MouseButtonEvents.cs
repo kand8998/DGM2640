@@ -1,11 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class MouseButtonEvents : MonoBehaviour
 {
-  public UnityEvent mouseUpButtonEvent;
-  private void OnMouseUpAsButton()
+  public UnityEvent mouseButtonDownEvent, mouseButtonUpEvent;
+
+  private void Update()
   {
-    mouseUpButtonEvent.Invoke();
+    if (Input.GetMouseButtonDown(0))
+    {
+      mouseButtonDownEvent.Invoke();
+    }
+
+    if (Input.GetMouseButtonUp(0))
+    {
+      mouseButtonUpEvent.Invoke();
+    }
   }
 }
