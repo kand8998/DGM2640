@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class TriggerEvents : MonoBehaviour
 {
-    public UnityEvent triggerEnterEvent, triggerExitEvent, triggerStayEvent, crouchEvent;
+    public UnityEvent triggerEnterEvent, triggerExitEvent, triggerStayEvent, crouchEvent, standEvent;
     private void OnTriggerEnter(Collider other)
     {
         triggerEnterEvent.Invoke();
@@ -22,6 +22,11 @@ public class TriggerEvents : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             crouchEvent.Invoke();
+        }
+
+        if (Input.GetKeyUp(KeyCode.C))
+        {
+            standEvent.Invoke();
         }
     }
 }
