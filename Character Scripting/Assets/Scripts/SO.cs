@@ -24,7 +24,7 @@ public class AnimController : ScriptableObject
 }
 
 [CreateAssetMenu(menuName = "Single Variables/FloatData")]
-public class FloatData : ScriptableObject
+public class FloatData : NameID
 {
     public float value = 1f;
     public float maxValue = 1f;
