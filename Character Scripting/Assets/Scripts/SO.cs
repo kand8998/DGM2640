@@ -7,24 +7,6 @@ public class NameID : ScriptableObject
 }
 
 [CreateAssetMenu]
-public class GameAction : ScriptableObject
-{
-    public UnityAction action;
-    public object call;
-    public UnityAction<Transform> transformAction;
-
-    public void Raise()
-    {
-        action?.Invoke();
-    }
-
-    public void Raise(Transform transformObj)
-    {
-        transformAction?.Invoke(transformObj);
-    }
-}
-
-[CreateAssetMenu]
 public class AnimController : ScriptableObject
 {
     public float animationSpeed = 10f, animatorPlayback = 3f;

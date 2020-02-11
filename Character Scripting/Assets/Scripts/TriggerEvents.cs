@@ -5,7 +5,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class TriggerEvents : MonoBehaviour
 {
-    public UnityEvent triggerEnterEvent, triggerExitEvent, triggerStayEvent, crouchEvent, standEvent;
+    public UnityEvent triggerEnterEvent, triggerExitEvent,
+        triggerStayEvent, crouchEvent, standEvent;
     private void OnTriggerEnter(Collider other)
     {
         triggerEnterEvent.Invoke();
