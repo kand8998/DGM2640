@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BehaviourID : MonoBehaviour
+public class IDBehaviour : MonoBehaviour
 {
     public NameID nameIdObj;
 }

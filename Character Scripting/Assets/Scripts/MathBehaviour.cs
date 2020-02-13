@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class MathBehaviour : MonoBehaviour
 {
@@ -8,8 +9,7 @@ public class MathBehaviour : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        otherNameId = other.GetComponent<BehaviourID>().nameIdObj;
-        ChangeValue();
+        otherNameId = other.GetComponent<IDBehaviour>().nameIdObj;
     }
 
     public void ChangeValue()
