@@ -40,12 +40,22 @@ public class MouseCast : Movement
     }
     private void SetFocus(Interactable newFocus)
     {
-        focus = newFocus;
-        
+        if (newFocus != focus)
+        {
+            if (focus !=null)
+                focus.OnDefocused();
+            
+            focus = newFocus; 
+        }
+        newFocus.OnFocused(transform);
     }
 
     private void RemoveFocus()
     {
+        if (focus !=null)
+            focus.OnDefocused();
+        
         focus = null;
+       
     }
 }
