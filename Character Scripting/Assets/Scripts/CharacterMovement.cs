@@ -1,20 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 
 [RequireComponent(typeof(CharacterController))]
-public class Movement : MonoBehaviour
+public class CharacterMovement : MoveBase
 {
-    private Vector3 position;
-    private CharacterController controller;
+    public float walkSpeed = 30f;
+    public float sprintSpeed = 60f;
     
-    public float moveSpeed = 10f, jumpSpeed = 30f, rotationSpeed = 100;
-    public float gravity = 9.81f;
-    
-    private int jumpCount;
-    public int jumpCountMax = 2;
-
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        moveSpeed = walkSpeed;
     }
     
     private void Update()
@@ -38,6 +36,29 @@ public class Movement : MonoBehaviour
             position.y = jumpSpeed;
             jumpCount++;
         }
+        
         controller.Move(position*Time.deltaTime);
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            moveSpeed = sprintSpeed;
+            SpeedIncrease();
+        }
+        
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            moveSpeed = walkSpeed;
+            SpeedDecrease();
+        }
+    }
+
+    private void SpeedIncrease()
+    {
+        speedUpEvent.Invoke();
+    }
+
+    private void SpeedDecrease()
+    {
+        speedDownEvent.Invoke();
     }
 }
