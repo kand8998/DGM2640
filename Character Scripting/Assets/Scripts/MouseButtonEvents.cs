@@ -1,10 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class MouseButtonEvents : MonoBehaviour
 {
-  public UnityEvent mouseButtonDownEvent, mouseButtonUpEvent;
+  public UnityEvent mouseButtonDownEvent, mouseButtonUpEvent, rightButtonDownEvent, rightButtonUpEvent;
 
   private void Update()
   {
@@ -16,6 +15,16 @@ public class MouseButtonEvents : MonoBehaviour
     if (Input.GetMouseButtonUp(0))
     {
       mouseButtonUpEvent.Invoke();
+    }
+
+    if (Input.GetMouseButtonDown(1))
+    {
+      rightButtonDownEvent.Invoke();
+    }
+
+    if (Input.GetMouseButtonUp(1))
+    {
+      rightButtonUpEvent.Invoke();
     }
   }
 }
