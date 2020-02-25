@@ -6,11 +6,11 @@ using UnityEngine;
 public class WorkSystemManager : ScriptableObject
 {
     [Serializable]
-    public struct PossibleMatches
+    public struct WorkMatches
     {
         public NameID nameIdObj;
         public WorkSystem workSystemObj;
     }
 
-    public List<PossibleMatches> workIdList;
+    public List<WorkMatches> workIdList;
 }
