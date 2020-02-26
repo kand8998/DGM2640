@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryBehaviour : MonoBehaviour
@@ -28,18 +27,16 @@ public class InventoryBehaviour : MonoBehaviour
     
     public bool Add(Item item)
     {
-        if (!item.isDefaultItem)
+        if (item.isDefaultItem) return true;
+        if (items.Count >= space)
         {
-            if (items.Count >= space)
-            {
-                Debug.Log("Not enough room.");
-                return false;
-            }
-            items.Add(item);
-
-            if (onItemChangedCallback!= null)
-                onItemChangedCallback.Invoke();
+            Debug.Log("Not enough room.");
+            return false;
         }
+        items.Add(item);
+
+        if (onItemChangedCallback!= null)
+            onItemChangedCallback.Invoke();
         return true;
     }
 

@@ -19,11 +19,6 @@ public class Debugger : ScriptableObject
         Debug.Log(amount);
     }
 
-    public void OnDebug(bool answer)
-    {
-        Debug.Log(answer);
-    }
-
     public void OnDebug(FloatData value)
     {
         Debug.Log(value);
