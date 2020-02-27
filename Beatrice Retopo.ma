@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Beatrice Retopo.ma
-//Last modified: Thu, Feb 27, 2020 12:59:38 PM
+//Last modified: Thu, Feb 27, 2020 01:02:19 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "FA12A6D6-4E27-19FF-0001-0FB7991FC284";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.8316343887711399 39.896734351932039 59.09260584882233 ;
-	setAttr ".r" -type "double3" 337.46164806774379 7194.5999999990327 0 ;
+	setAttr ".t" -type "double3" 0.31195574473492582 30.239206502497378 8.3128308737615875 ;
+	setAttr ".r" -type "double3" 316.46164806910696 7202.5999999989917 -2.9848427011161567e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C57447AD-4166-DA7D-300B-30B574A7ADBC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 59.528520221357574;
+	setAttr ".coi" 10.729921837652434;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
