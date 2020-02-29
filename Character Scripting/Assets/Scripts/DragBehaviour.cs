@@ -5,39 +5,31 @@ using UnityEngine.Events;
 public class DragBehaviour : MonoBehaviour
 {
     private Vector3 offsetPosition;
-        private Vector3 newPosition;
-        public Camera cam;
+    private float mouseZCoordinate;
+    public Camera cam;
+    public bool Draggable { get; set; }
 
-        public UnityEvent onDrag, onUp;
-        private bool CanDrag { get; set; }
-        private bool Draggable { get; set; }
+    private void Start()
+    {
+        cam = Camera.main;
+    }
 
-        private void Start()
-        {
-            cam = Camera.main;
-            Draggable = true;
-        }
+    private void OnMouseDown()
+    {
+        Draggable = true;
+        mouseZCoordinate = cam.WorldToScreenPoint(gameObject.transform.position).z;
+        offsetPosition = gameObject.transform.position - GetMouseWorldPos();
+    }
 
-        public IEnumerator OnMouseDown()
-        {
-            onDrag.Invoke();
-            offsetPosition = transform.position - cam.ScreenToWorldPoint(Input.mousePosition);
-            yield return new WaitForFixedUpdate();
-            CanDrag = true;
-            while (CanDrag)
-            {
-                yield return new WaitForFixedUpdate();
-                newPosition = cam.ScreenToWorldPoint(Input.mousePosition) + offsetPosition;
-                transform.position = newPosition;
-            }
-        }
+    private Vector3 GetMouseWorldPos()
+    {
+        Vector3 mousePoint = Input.mousePosition;
+        mousePoint.z = mouseZCoordinate;
+        return cam.ScreenToWorldPoint(mousePoint);
+    }
 
-        private void OnMouseUp()
-        {
-            CanDrag = false;
-            if (Draggable)
-            {
-                onUp.Invoke();
-            }
-        }
+    private void OnMouseDrag()
+    {
+        transform.position = GetMouseWorldPos() + offsetPosition;
+    }
 }

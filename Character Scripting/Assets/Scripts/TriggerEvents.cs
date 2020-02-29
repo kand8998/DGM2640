@@ -10,6 +10,7 @@ public class TriggerEvents : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         triggerEnterEvent.Invoke();
+        Debug.Log("It's triggering");
     }
 
     private void OnTriggerExit(Collider other)
