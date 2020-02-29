@@ -6,7 +6,7 @@ public class DragBehaviour : MonoBehaviour
 {
     private Vector3 offsetPosition;
         private Vector3 newPosition;
-        private Camera cam;
+        public Camera cam;
 
         public UnityEvent onDrag, onUp;
         private bool CanDrag { get; set; }

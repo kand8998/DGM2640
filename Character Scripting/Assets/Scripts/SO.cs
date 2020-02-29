@@ -28,7 +28,6 @@ public class FloatData : NameID
 {
     public float value = 1f;
     public float maxValue = 1f;
-    public Debugger debug;
     private void UpdateValue(float amount)
     {
         value += amount;
