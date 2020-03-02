@@ -12,5 +12,5 @@ public class WorkSystemManager : ScriptableObject
         public WorkSystem workSystemObj;
     }
 
-    public List<WorkMatches> workIdList;
+   
 }
