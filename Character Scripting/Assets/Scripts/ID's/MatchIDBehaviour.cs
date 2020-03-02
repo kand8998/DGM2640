@@ -38,6 +38,7 @@ public class MatchIDBehaviour : IDBehaviour
         {
             if (otherIdObj == obj.nameIdObj)
             {
+            {
                 obj.workEvent.Invoke();
             }
         }
