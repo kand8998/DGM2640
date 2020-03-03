@@ -15,7 +15,7 @@ public class MatchIDBehaviour : IDBehaviour
     private IDBehaviour otherBehaviourObj;
     private NameID otherIdObj;
     public List<possibleWork> workIdList;
-    
+
     private void OnTriggerEnter(Collider other)
     {
         otherBehaviourObj = other.GetComponent<IDBehaviour>();
@@ -38,8 +38,9 @@ public class MatchIDBehaviour : IDBehaviour
         {
             if (otherIdObj == obj.nameIdObj)
             {
-            {
-                obj.workEvent.Invoke();
+                {
+                    obj.workEvent.Invoke();
+                }
             }
         }
     }
