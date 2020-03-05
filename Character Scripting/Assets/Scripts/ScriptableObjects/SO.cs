@@ -23,17 +23,6 @@ public class AnimController : ScriptableObject
     }
 }
 
-[CreateAssetMenu(menuName = "Single Variables/IntData")]
-public class IntData: ScriptableObject
-{
-    public int count = 0;
-
-    private void UpdateCount(int amount)
-    {
-        count += amount;
-    }
-}
-
 [CreateAssetMenu(menuName = "Single Variables/BoolData")]
 public class BoolData: ScriptableObject
 {

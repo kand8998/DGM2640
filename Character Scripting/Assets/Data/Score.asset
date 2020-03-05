@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901f7417650239e4ab981b4488a50ca4, type: 3}
-  m_Name: Dialogue
+  m_Script: {fileID: 11500000, guid: 25e1d7cf818c74443bacc2ec59a294be, type: 3}
+  m_Name: Score
   m_EditorClassIdentifier: 
-  stringListObj:
-  - 
-  - Glad You're Here!
-  - Welcome My Son!
-  - Want to Play a Game?
-  currentLineNumber: 1
+  value: 1
+  maxValue: 1

@@ -1,19 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
 public class TextBehaviour : MonoBehaviour
 {
     private Text textObj;
-    public StringListData stringListDataObj;
+    public UnityEvent awakeEvent;
     private void Start()
     {
         textObj = GetComponent<Text>();
+        awakeEvent.Invoke();
     }
-
-   
-    private void Update()
+    
+    public void UpdateText (StringListData stringListDataObj)
     {
         textObj.text = stringListDataObj.ReturnCurrentLine();
+    }
+    
+    public void UpdateText (FloatData floatDataObj)
+    {
+        textObj.text = floatDataObj.value.ToString();
     }
 }

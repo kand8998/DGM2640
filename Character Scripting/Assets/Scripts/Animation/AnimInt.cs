@@ -16,6 +16,6 @@ public class AnimInt : MonoBehaviour
 
     private void SetIntValue()
     {
-        animObj.SetInteger("Speed", intObj.count);
+        animObj.SetInteger("Speed", intObj.value);
     }
 }
