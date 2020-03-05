@@ -22,4 +22,9 @@ public class TextBehaviour : MonoBehaviour
     {
         textObj.text = floatDataObj.value.ToString();
     }
+    
+    public void UpdateText (IntData intDataObj)
+    {
+        textObj.text = intDataObj.value.ToString();
+    }
 }
