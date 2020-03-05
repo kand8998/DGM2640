@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 
 [CreateAssetMenu(menuName = "Single Variables/FloatData")]
@@ -6,6 +7,7 @@ public class FloatData : NameID
 {
     public float value = 1f;
     public float maxValue = 1f;
+    public UnityEvent zeroEvent;
     private void UpdateValue(float amount)
     {
         value += amount;
@@ -20,6 +22,7 @@ public class FloatData : NameID
         else
         {
             value = 0;
+            zeroEvent.Invoke();
         }
     }
 
