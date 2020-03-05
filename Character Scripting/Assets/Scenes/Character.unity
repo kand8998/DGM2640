@@ -1512,7 +1512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253, y: 144}
+  m_AnchoredPosition: {x: 373, y: 144}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814074892
@@ -1557,9 +1557,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8294e597c1e0a684a99e958a17bd6763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awakeEvent:
+  startEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1642758e032cb3b4f8502cbf04ec76df, type: 2}
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1814074894
@@ -1595,7 +1606,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 000
 --- !u!222 &1814074895
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1806,7 +1817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8294e597c1e0a684a99e958a17bd6763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awakeEvent:
+  startEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1870,7 +1881,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1849977293}
-        m_MethodName: UpdateStringData
+        m_MethodName: UpdateText
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 2dd39424d75cedc429739f4137d3e551,

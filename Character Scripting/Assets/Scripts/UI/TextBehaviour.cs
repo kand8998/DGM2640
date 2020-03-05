@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class TextBehaviour : MonoBehaviour
 {
     private Text textObj;
-    public UnityEvent awakeEvent;
+    public UnityEvent startEvent;
     private void Start()
     {
         textObj = GetComponent<Text>();
-        awakeEvent.Invoke();
+        startEvent.Invoke();
     }
     
     public void UpdateText (StringListData stringListDataObj)
