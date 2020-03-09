@@ -7,7 +7,5 @@ public class SimpleTriggerScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         triggerEvent.Invoke();
-        Debug.Log("System is triggering");
-        //triggering is broken for game
     }
 }
