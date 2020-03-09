@@ -1,38 +1,36 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharStats : MonoBehaviour
 {
-    public int maxHP = 100;
-    private int currentHP { get; set; }
+    public int maxHealth = 100;
+    private int currentHealth { get; set; }
+    
     public Stats damage;
     public HealthBar healthBar;
 
     private void Awake()
     {
-        currentHP = maxHP;
+        currentHealth = maxHealth;
     }
 
     private void Start()
     {
-        if (healthBar != null) healthBar.SetMaxHealth(maxHP);
+        if (healthBar != null) healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int damage)
     {
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
-        currentHP -= damage;
+        currentHealth -= damage;
         Debug.Log(transform.name + "takes" + damage + "damage.");
 
-        if (currentHP <= 0)
+        if (currentHealth <= 0)
         {
-            //
+            Die();
         }
     }
 
-    public virtual void Die()
+    protected virtual void Die()
     {
         Debug.Log(transform.name + "died");
     }

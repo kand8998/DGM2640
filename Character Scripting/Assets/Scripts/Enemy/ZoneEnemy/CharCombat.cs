@@ -7,13 +7,15 @@ public class CharCombat : MonoBehaviour
     public float attackSpeed = 1f;
     private float attackCoolDown = 0f; 
     public float attackDelay = 0f;
-
-    public FloatData characterData;
+    
+    private CharStats myStats;
+    
 
     public event System.Action OnAttack;
-    void Start()
+    
+    private void Start()
     {
-        characterData.value = 1f;
+        myStats = GetComponent<CharStats>();
     }
 
     private void Update()
@@ -21,7 +23,7 @@ public class CharCombat : MonoBehaviour
         attackCoolDown -= Time.deltaTime;
     }
 
-    public void Attack(FloatData targetStats)
+    public void Attack(CharStats targetStats)
     {
         if (attackCoolDown <= 0f)
         {
@@ -34,10 +36,10 @@ public class CharCombat : MonoBehaviour
        
     }
 
-    IEnumerator DoDamage(FloatData stats, float delay)
+    IEnumerator DoDamage(CharStats stats, float delay)
     {
         yield return new WaitForSeconds(delay);
-        stats.maxValue -= characterData.value;
+        stats.TakeDamage(myStats.damage.GetValue());
 
     }
 }

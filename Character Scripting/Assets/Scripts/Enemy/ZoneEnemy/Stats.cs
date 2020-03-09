@@ -10,5 +10,4 @@ public class Stats
         int finalValue = baseValue;
         return finalValue;
     }
-    
 }
