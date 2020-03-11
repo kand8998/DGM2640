@@ -2,10 +2,10 @@
 
 public class BillboardController : MonoBehaviour
 {
-    public Transform camera;
+    public Transform cam;
 
     private void LateUpdate()
     {
-        transform.LookAt(transform.position + camera.forward);
+        transform.LookAt(transform.position + cam.forward);
     }
 }

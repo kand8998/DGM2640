@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class GizmosController : MonoBehaviour
+public class RangeController : MonoBehaviour
 {
   public UnityEvent rangeEvent;
+  
   public float radius = 10.0f;
-  public Transform target;
+  private Transform target;
 
-  private void OnDrawGizmosSelected()
+  private void Start()
   {
-    Gizmos.color = Color.magenta;
-    Gizmos.DrawWireSphere(transform.position, radius);
+    target = PlayerManager.instance.player.transform;
   }
 
   private void Update()
@@ -21,5 +21,11 @@ public class GizmosController : MonoBehaviour
     {
       rangeEvent.Invoke();
     }
+  }
+  
+  private void OnDrawGizmosSelected()
+  {
+    Gizmos.color = Color.magenta;
+    Gizmos.DrawWireSphere(transform.position, radius);
   }
 }
