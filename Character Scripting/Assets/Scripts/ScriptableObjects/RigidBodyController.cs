@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Tools/ColorData")]
 public class RigidBodyController : ScriptableObject
 {
     private void AddTorque(Rigidbody rigidBodyObj)

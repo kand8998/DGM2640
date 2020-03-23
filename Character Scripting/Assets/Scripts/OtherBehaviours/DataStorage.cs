@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "DataStorage", menuName = "Data Storage/Data Storage Object")]
+[CreateAssetMenu(fileName = "DataStorage", menuName = "Data/Data Storage Object")]
 public class DataStorage : ScriptableObject
 {
     public ScriptableObject data;

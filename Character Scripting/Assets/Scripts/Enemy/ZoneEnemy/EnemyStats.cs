@@ -9,5 +9,4 @@ public class EnemyStats : CharStats
         base.Die();
         deathEvent.Invoke();
     }
-
 }

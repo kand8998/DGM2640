@@ -3,15 +3,18 @@
 [RequireComponent(typeof(CharacterController))]
 public class CharacterMovement : MoveBase
 {
+    public GameAction speedUpAction;
+    public GameAction slowDownAction;
+    
     public float walkSpeed = 30f;
     public float sprintSpeed = 60f;
-    
-    public GameAction speedUpAction, slowDownAction;
-    
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
+        speedUpAction.action += SpeedIncrease;
+        slowDownAction.action += SpeedDecrease;
     }
     
     private void Update()

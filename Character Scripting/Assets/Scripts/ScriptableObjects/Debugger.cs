@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Tools/Debugger")]
 public class Debugger : ScriptableObject
 {
     
