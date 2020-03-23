@@ -5,7 +5,7 @@ public class LocationBehaviour : ScriptableObject
 {
     public Transform location;
 
-    private void SetLocation(Transform target)
+    public void SetLocation(Transform target)
     {
         location = target;
     }
