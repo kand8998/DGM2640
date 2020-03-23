@@ -6,6 +6,8 @@ public class CharacterMovement : MoveBase
     public float walkSpeed = 30f;
     public float sprintSpeed = 60f;
     
+    public GameAction speedUpAction, slowDownAction;
+    
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -35,27 +37,17 @@ public class CharacterMovement : MoveBase
         }
         
         controller.Move(position*Time.deltaTime);
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-        {
-            moveSpeed = sprintSpeed;
-            SpeedIncrease();
-        }
-        
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
-        {
-            moveSpeed = walkSpeed;
-            SpeedDecrease();
-        }
     }
 
     private void SpeedIncrease()
     {
+        moveSpeed = sprintSpeed;
         speedUpEvent.Invoke();
     }
 
     private void SpeedDecrease()
     {
+        moveSpeed = walkSpeed;
         speedDownEvent.Invoke();
     }
 }
