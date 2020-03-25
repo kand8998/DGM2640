@@ -1,15 +1,23 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "Tools/RotateValue")]
-public class RandomRotation : ScriptableObject
+public class RandomRotation : MonoBehaviour
 {
-    private Vector3[] rotationsValues;
+    public GameAction rotateAction;
+    public Transform rotateObj;
+    
+    private Quaternion[] rotationsValues;
     private int randomValue;
 
-    public void RandomRotationValue(GameObject obj)
+    
+    private void Start()
+    {
+        rotateAction.action += RotateRandom;
+    }
+
+    private void RotateRandom()
     {
         randomValue = Random.Range(0, rotationsValues.Length);
-        
     }
 }
