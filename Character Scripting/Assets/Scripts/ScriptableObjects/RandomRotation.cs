@@ -12,7 +12,6 @@ public class RandomRotation : MonoBehaviour
 
     private void RotateObject()
     {
-        new Rect(10, 10, 100, 50);
-            transform.rotation = Random.rotation;
+        transform.rotation = Random.rotation;
     }
 }
