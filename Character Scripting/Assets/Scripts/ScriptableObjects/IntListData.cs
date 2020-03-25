@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "List/StringListData")]
-public class StringListData : ScriptableObject
+[CreateAssetMenu(menuName = "List/IntListData")]
+public class IntListData : ScriptableObject
 {
-    public List<string> stringListObj;
+    public List<int> intListDataObj;
     public int currentLineNumber;
 
-    public string ReturnCurrentLine()
+    public int ReturnCurrentLine()
     {
-        return stringListObj[currentLineNumber];
+        return intListDataObj[currentLineNumber];
     }
 
     public void ResetToZero()
@@ -19,7 +19,7 @@ public class StringListData : ScriptableObject
 
     public void IncrementLineNumber()
     {
-        if (currentLineNumber < stringListObj.Count)
+        if (currentLineNumber < intListDataObj.Count)
         {
             currentLineNumber++;
         }

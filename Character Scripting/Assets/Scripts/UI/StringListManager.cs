@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "List/StringListManager")]
 public class StringListManager : ScriptableObject
 {
     public List<StringListData> stringListDatas;
