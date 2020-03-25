@@ -1,23 +1,18 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
-using UnityEngine.Events;
 
 public class RandomRotation : MonoBehaviour
 {
     public GameAction rotateAction;
-    public Transform rotateObj;
-    
-    private Quaternion[] rotationsValues;
-    private int randomValue;
-
     
     private void Start()
     {
-        rotateAction.action += RotateRandom;
+        rotateAction.action += RotateObject;
     }
 
-    private void RotateRandom()
+    private void RotateObject()
     {
-        randomValue = Random.Range(0, rotationsValues.Length);
+        new Rect(10, 10, 100, 50);
+            transform.rotation = Random.rotation;
     }
 }
