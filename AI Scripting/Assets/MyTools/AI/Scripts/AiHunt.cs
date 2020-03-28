@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-
 [CreateAssetMenu(fileName = "Hunt", menuName = "Ai/Function/Hunt")]
 
 public class AiHunt : AiBase
@@ -14,7 +13,7 @@ public class AiHunt : AiBase
 		if (destinationAction != null) destinationAction.raise += Raise;
 	}
 
-	private void Raise(object obj)
+	protected void Raise(object obj)
 	{
 		destination = obj as Transform;
 	}
