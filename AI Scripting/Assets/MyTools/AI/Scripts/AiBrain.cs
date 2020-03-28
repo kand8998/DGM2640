@@ -5,7 +5,6 @@ using UnityEngine.AI;
 public class AiBrain : ScriptableObject
 {
 	public AiBase aiBaseObj;
-
 	public void ChangeBase(AiBase obj)
 	{
 		aiBaseObj = obj;
