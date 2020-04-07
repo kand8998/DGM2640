@@ -1,6 +1,24 @@
-newmtl initialShadingGroup
+newmtl Black_ShaderSG
 illum 4
-Kd 0.50 0.50 0.50
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Clothes_ShaderSG
+illum 4
+Kd 0.22 0.04 0.06
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Flesh_ShaderSG
+illum 4
+Kd 0.58 0.37 0.27
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 1.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
 Ni 1.00
