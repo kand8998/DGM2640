@@ -14,7 +14,11 @@ public class AudioController : MonoBehaviour
     private void SetVolume(float amount)
     {
         audioObj.volume = amount;
-        
+    }
+
+    private void SetVolume(FloatData floatObj)
+    {
+        audioObj.volume = floatObj.value;
     }
 
     private void PlayAudio()
@@ -22,9 +26,35 @@ public class AudioController : MonoBehaviour
         audioObj.Play();
     }
 
+    private void PauseAudio()
+    {
+        audioObj.Pause();
+    }
+    
+    private void StopAudio()
+    {
+        audioObj.Stop();
+    }
+
+    private void LoopToggle()
+    {
+        if (audioObj.loop == false)
+        {
+            audioObj.loop = true;
+        }
+        else
+        {
+            audioObj.loop = false;
+        }
+    }
 
     private void SetClip(AudioClip clipObj)
     {
         audioObj.clip = clipObj;
+    }
+
+    private void SetPitch(FloatData floatObj)
+    {
+        audioObj.pitch = floatObj.value;
     }
 }
