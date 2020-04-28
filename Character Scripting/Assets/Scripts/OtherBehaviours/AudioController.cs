@@ -57,4 +57,41 @@ public class AudioController : MonoBehaviour
     {
         audioObj.pitch = floatObj.value;
     }
+
+    private void SetPitch(float amount)
+    {
+        audioObj.pitch = amount;
+    }
+
+    private void SchedulePlay(float time)
+    {
+        audioObj.SetScheduledStartTime(time);
+    }
+
+    private void SetTime(float timing)
+    {
+        audioObj.time = timing;
+    }
+
+    private void SpatializeToggle()
+    {
+        if (audioObj.spatialize == false)
+        {
+            audioObj.spatialize = true;
+        }
+        else
+        {
+            audioObj.spatialize = false;
+        }
+    }
+
+    private void SetPriority(int amount)
+    {
+        audioObj.priority = amount;
+    }
+
+    private void SetSpread(float amount)
+    {
+        audioObj.spread = amount;
+    }
 }
